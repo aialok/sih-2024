@@ -1,0 +1,31 @@
+{
+  "name": "iiitr-insights-backend",
+  "version": "1.0.0",
+  "description": "This is the backend for the IIITR Insights project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": " nodemon --env-file=.env src/index.js",
+    "start": "node --env src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iiitr",
+    "insights",
+    "backend"
+  ],
+  "author": "Alok Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/core": "^0.2.20",
+    "@langchain/google-genai": "^0.0.23",
+    "@langchain/mongodb": "^0.0.4",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "langchain": "^0.2.12",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
