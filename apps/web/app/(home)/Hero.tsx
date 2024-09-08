@@ -11,18 +11,12 @@ function Hero() {
     <>
       <div className="homepage flex flex-col items-center relative w-[80%] h-[50vh]">
         <div className="m-10 flex justify-center text-center">
-          <Link
-            href="https://github.com/aialok/iiitr.insights"
-            className="flex items-center "
-          >
-            <AnimatedGradientTextDemo
-              element={<Github />}
-              text={"Give a star on GitHub "}
-            />
-          </Link>
+          {/* <Link href="https://github.com/aialok/iiitr.insights" className="flex items-center ">
+            <AnimatedGradientTextDemo element={<Github />} text={"Give a star on GitHub "} />
+          </Link> */}
         </div>
         <div className="text-6xl sm:text-9xl font-bold z-20 text-transparent bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 bg-clip-text py-8 ">
-          iiitr.insights
+          EduAssist AI
         </div>
         <div className="h-16 sm:h-24">
           <div className="text-2xl relative left-0 right-0 text-center mt-4">

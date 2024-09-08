@@ -7,8 +7,8 @@ interface HeaderProps {
 
 function Header({ selectedDocumentType }: HeaderProps) {
   return (
-    <header className="p-2 flex justify-between items-center border-b border-gray-800">
-      <h1 className="text-lg font-semibold">iiitr.insights.ai</h1>
+    <header className="p-3 flex justify-between items-center border-b border-gray-800">
+      <h1 className="text-lg font-semibold">EduAssist AI</h1>
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}

@@ -27,12 +27,7 @@ const documentTypes = [
   { value: "student-affair-info", label: "Student Affairs Info" },
 ];
 
-function Footer({
-  messages,
-  setMessages,
-  setIsTyping,
-  setSelectedDocumentType,
-}: FooterProps) {
+function Footer({ messages, setMessages, setIsTyping, setSelectedDocumentType }: FooterProps) {
   const [input, setInput] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -43,13 +38,10 @@ function Footer({
         setMessages([...messages, { type: "user", content: input }]);
         setInput("");
         setIsTyping(true);
-        const response = await axios.post(
-          "http://localhost:3000/api/v1/chat-message",
-          {
-            text: input,
-            type: "human",
-          }
-        );
+        const response = await axios.post("https://sih-2024-c0w4.onrender.com/api/v1/chat-message", {
+          text: input,
+          type: "human",
+        });
         console.log(response);
         if (response.data) {
           setMessages((msgs) => [
@@ -121,9 +113,7 @@ function Footer({
               className="bg-gray-800 rounded-lg p-4 w-full max-w-sm"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-semibold mb-4">
-                Select Document Type
-              </h2>
+              <h2 className="text-xl font-semibold mb-4">Select Document Type</h2>
               {documentTypes.map((type) => (
                 <button
                   key={type.value}

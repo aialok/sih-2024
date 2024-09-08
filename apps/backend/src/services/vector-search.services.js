@@ -32,7 +32,7 @@ class VectorSearchService {
       const retriever = vectorStore.asRetriever({
         searchType: "mmr",
         searchKwargs: {
-          fetchK: 2,
+          fetchK: 5,
           lambda: 0.6,
         },
       });
