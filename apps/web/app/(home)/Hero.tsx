@@ -30,7 +30,7 @@ function Hero() {
               className="dark:bg-gray-900 bg-white text-black dark:text-white flex items-center space-x-2"
             >
               <Link href="/chat/fwef" className="flex items-center gap-1 ">
-                Chat Now
+                Get Started
                 <div className="flex overflow-hidden relative justify-center items-center ml-1 w-5 h-5">
                   <ArrowUpRight className="absolute transition-all duration-500 group-hover:translate-x-4 group-hover:-translate-y-5" />
                 </div>
