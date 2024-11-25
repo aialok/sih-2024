@@ -19,7 +19,7 @@ class VectorSearchService {
       });
 
       const dbName = "iiitr-insights";
-      const collectionName = queryType;
+      const collectionName = 'student-info';
       const collection = await client.db(dbName).collection(collectionName);
 
       const vectorStore = new MongoDBAtlasVectorSearch(embeddingModel, {
