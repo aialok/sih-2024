@@ -17,7 +17,7 @@ export const getChatHistory = async (req, res) => {
 
 export const addChatMessage = async (req, res) => {
   try {
-    const { type, text } = req.body;
+    const { type, text, collectionType } = req.body;
     if (!type || !text || (type !== "human" && type !== "ai")) {
       return res.status(400).json({
         status: "error",
@@ -25,7 +25,7 @@ export const addChatMessage = async (req, res) => {
           "Invalid message format. Expected {type: 'human'|'ai', text: string}",
       });
     }
-    const response = await chatService.addChatMessage({ type, text });
+    const response = await chatService.addChatMessage({ type, text }, collectionType);
     return res.status(200).json({
       status: "ok",
       message: "Message added successfully",

@@ -14,6 +14,7 @@ interface FooterProps {
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
   setIsTyping: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedDocumentType: React.Dispatch<React.SetStateAction<string>>;
+  selectedDocumentType: string;
 }
 
 const documentTypes = [
@@ -27,7 +28,7 @@ const documentTypes = [
   { value: "student-affair-info", label: "Student Affairs Info" },
 ];
 
-function Footer({ messages, setMessages, setIsTyping, setSelectedDocumentType }: FooterProps) {
+function Footer({ messages, setMessages, setIsTyping, setSelectedDocumentType, selectedDocumentType }: FooterProps) {
   const [input, setInput] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -41,6 +42,7 @@ function Footer({ messages, setMessages, setIsTyping, setSelectedDocumentType }:
         const response = await axios.post("https://sih-2024-c0w4.onrender.com/api/v1/chat-message", {
           text: input,
           type: "human",
+          collectionType: selectedDocumentType  ??  "general-info",
         });
         console.log(response);
         if (response.data) {
@@ -118,7 +120,7 @@ function Footer({ messages, setMessages, setIsTyping, setSelectedDocumentType }:
                 <button
                   key={type.value}
                   onClick={() => {
-                    setSelectedDocumentType(type.label);
+                    setSelectedDocumentType(type.value);
                     setIsModalOpen(false);
                   }}
                   className="block w-full text-left px-4 py-2 hover:bg-gray-700 transition-colors rounded"

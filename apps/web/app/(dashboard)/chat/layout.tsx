@@ -34,6 +34,7 @@ const Layout: React.FC = () => {
         setMessages={setMessages}
         setIsTyping={setIsTyping}
         setSelectedDocumentType={setSelectedDocumentType}
+        selectedDocumentType={selectedDocumentType}
       />
     </div>
   );

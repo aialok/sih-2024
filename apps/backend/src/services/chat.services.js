@@ -38,8 +38,9 @@ class ChatService {
     return;
   }
 
-  async addChatMessage(message) {
-    const context = await this.vectorSearchService.vectorSearch(message.text, "general-info");
+  async addChatMessage(message, collectionType) {
+
+    const context = await this.vectorSearchService.vectorSearch(message.text, collectionType ?? "general-info");
 
     console.log(context);
 
